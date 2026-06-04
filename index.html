@@ -10,6 +10,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        font-family: 'Open Sans';
     }
     a{
         color: black;
@@ -27,13 +28,110 @@
         border-bottom: 4px solid #d28fff;
         margin-bottom: 8px;
     }
+    .mcbe{
+        font-size: 50px;
+        border-radius: 10px;
+        background-color: #ff4400;
+        transform: rotate(-10deg) translateX(-50px);
+        animation: mcbe 0.5s ease;
+    }
+    .gratis{
+        font-size: 30px;
+        border-radius: 10px;
+        background-color: #d28fff;
+        transform: rotate(10deg) translateX(60px);
+        position: fixed;
+        top: 80px;
+        animation: gratis 0.5s ease;
+        animation-delay: 0.6s;
+        opacity: 0;
+    }
+    @keyframes mcbe{
+        0%{
+            transform: rotate(30deg) translateX(-200px);
+            scale: 0;
+        }
+        100%{
+            transform: rotate(-10deg) translateX(-50px);
+            scale: 1;
+        }
+    }
+    @keyframes gratis{
+        0%{
+            scale: 0;
+        }
+        70%{
+            scale: 1.2;
+        }
+        100%{
+            scale: 1;
+        }
+    }
+    @keyframes fadeIn{
+        0%{
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    .txtIntro{
+        animation: fadeIn 0.5s ease;
+        opacity: 0;
+        animation-delay: 1.2s;
+    }
+    #intro{
+        animation: finishIntro 0.5s ease;
+        animation-delay: 1.6s;
+    }
+    @keyframes finishIntro{
+        0%{
+            scale: 1;
+        }
+        50%{
+            scale: 1.2;
+        }
+        100%{
+            scale: 1;
+        }
+    }
+    #content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        animation: fadeIn 0.5s ease;
+    }
 </style>
 </head>
 <body>
-    <video style="width: 70vh; border-radius: 20px;" controls>
-        <source src="instalarmcbe.mp4" type="video/mp4">
-    </video>
-    <a href="ms-windows-store://home">Abrir Microsoft Store</a>
-    <a target="_blank" href="https://drive.google.com/uc?export=download&&id=1vi0uAG3gZzaSIWqbuLD6AZPt0GkOz6ED">Descargar unlocker</a>
+    <div id="intro">
+        <h1 class="mcbe">MCBE</h1>
+        <h2 class="gratis">Gratis</h2>
+        <br>
+        <h2 class="txtIntro">Para Windows</h2>
+        <p class="txtIntro">Por Daniel Tejedor</p>
+    </div>
+    <div id="content" style="display: none;">
+        <video style="width: 70vh; border-radius: 20px;" controls>
+            <source src="instalarmcbe.mp4" type="video/mp4">
+        </video>
+        <a href="ms-windows-store://home">Abrir Microsoft Store</a>
+        <a target="_blank" href="https://drive.google.com/uc?export=download&&id=1vi0uAG3gZzaSIWqbuLD6AZPt0GkOz6ED">Descargar unlocker</a>
+    </div>
+    <script>
+        setTimeout(() => {
+            document.getElementsByClassName('gratis')[0].style.opacity = '1';
+        }, 650);
+        setTimeout(() => {
+            document.getElementsByClassName('txtIntro')[0].style.opacity = '1';
+            document.getElementsByClassName('txtIntro')[1].style.opacity = '1';
+        }, 1200);
+        setTimeout(() => {
+            document.getElementById('intro').style.display = 'none';
+            document.getElementById('content').style.display = 'flex';
+        }, 3000);
+    </script>
 </body>
 </html>
