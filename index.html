@@ -103,6 +103,40 @@
         align-items: center;
         animation: fadeIn 0.5s ease;
     }
+    #mcpedl{
+        color: black;
+        text-decoration: none;
+        font-size: 20px;
+        font-family: 'Open Sans';
+        margin: 10px;
+        border-bottom: 2px solid #06AE33;
+        background-color: white;
+        border-radius: 5px;
+        padding: 10px;
+        transition: all 0.1s ease;
+    }
+    #mcpedl:hover{
+        background-color: #06AE33;
+        border-bottom: 4px solid #06AE33;
+        margin-bottom: 8px;
+    }
+    #curseforge{
+        color: black;
+        text-decoration: none;
+        font-size: 20px;
+        font-family: 'Open Sans';
+        margin: 10px;
+        border-bottom: 2px solid #E96134;
+        background-color: white;
+        border-radius: 5px;
+        padding: 10px;
+        transition: all 0.1s ease;
+    }
+    #curseforge:hover{
+        background-color: #E96134;
+        border-bottom: 4px solid #E96134;
+        margin-bottom: 8px;
+    }
 </style>
 </head>
 <body>
@@ -119,9 +153,12 @@
         </video>
         <a href="ms-windows-store://home">Abrir Microsoft Store</a>
         <a target="_blank" href="https://drive.google.com/uc?export=download&&id=1vi0uAG3gZzaSIWqbuLD6AZPt0GkOz6ED">Descargar unlocker</a>
-        <h1>Una vez hecho, descarga mi ADDON!!!</h1>
-        <a href="https://www.curseforge.com/minecraft-bedrock/addons/definitive-amulets">Descargar en CurseForge</a>
-        <a href="https://mcpedl.com/definitive-amulets/">Descargar en MCPEDL</a>
+        <h3>Una vez hecho, descarga mi ADDON!!!</h3>
+        <p>Descargar en...</p>
+        <div style="display: flex;">
+            <a href="https://www.curseforge.com/minecraft-bedrock/addons/definitive-amulets" id="curseforge">CurseForge</a>
+            <a href="https://mcpedl.com/definitive-amulets/" id="mcpedl">MCPEDL</a>
+        </div>
     </div>
     <script>
         setTimeout(() => {
