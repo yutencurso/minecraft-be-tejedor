@@ -151,8 +151,10 @@
         <video style="width: 70vh; border-radius: 20px;" controls>
             <source src="instalarmcbe.mp4" type="video/mp4">
         </video>
-        <a href="ms-windows-store://home">Abrir Microsoft Store</a>
-        <a target="_blank" href="https://drive.google.com/uc?export=download&&id=1vi0uAG3gZzaSIWqbuLD6AZPt0GkOz6ED">Descargar unlocker</a>
+        <div id="winOnly">
+            <a href="ms-windows-store://home">Abrir Microsoft Store</a>
+            <a target="_blank" href="https://drive.google.com/uc?export=download&&id=1vi0uAG3gZzaSIWqbuLD6AZPt0GkOz6ED">Descargar unlocker</a>
+        </div>
         <h3>Una vez hecho, descarga mis ADDONS!!!</h3>
         <p>Descargar en...</p>
         <div style="display: flex;">
@@ -174,6 +176,19 @@
             document.getElementById('intro').style.display = 'none';
             document.getElementById('content').style.display = 'flex';
         }, 3000);
+        // Forma moderna (recomendada)
+        if (navigator.userAgentData && navigator.userAgentData.platform) {
+            const isWindows = navigator.userAgentData.platform.toLowerCase().includes('win');
+            if (isWindows) {
+                const winOnly = document.getElementById("winOnly")
+                winOnly.style.pointerEvents = "none"
+                winOnly.style.opacity = "0.6"
+            }
+        } 
+        // Forma tradicional (compatible con navegadores antiguos)
+        else {
+            const isWindows = navigator.userAgent.toLowerCase().includes('win');
+        }
     </script>
 </body>
 </html>
